@@ -36,31 +36,31 @@
     <div class="container" style="padding-top: 50px;padding-bottom: 50px;margin-bottom: 20px;">
         <h2 style="font-family: Montserrat, sans-serif;padding-bottom: 20px;"><strong>Add/Edit Details</strong></h2>
         <p style="font-family: Montserrat, sans-serif;"><em>If you don't have any thing to specifiy please write NA.</em></p>
-        <form method="GET">
-            <div class="form-group" placeholder="Age"><label style="font-family: Montserrat, sans-serif;"><strong>Name</strong></label><input class="form-control d-inline name" type="text" required="" placeholder="John Doe" style="font-family: Montserrat, sans-serif;"></div>
+        <form method="POST">
+            <div class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Name</strong></label><input class="form-control d-inline" type="text" name="name" required="" placeholder="John Doe" style="font-family: Montserrat, sans-serif;"></div>
             <div class="form-group"
-                placeholder="Age"><label style="font-family: Montserrat, sans-serif;"><strong>Age</strong></label><input class="form-control age" type="number" min="0" max="150" style="font-family: Montserrat, sans-serif;" placeholder="20" required=""></div>
+                ><label style="font-family: Montserrat, sans-serif;"><strong>Age</strong></label><input class="form-control" type="number" min="0" max="150" style="font-family: Montserrat, sans-serif;" placeholder="20" required="" name="age"></div>
             <div class="form-group"
-                placeholder="Age"><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Gender</strong></label>
+                ><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Gender</strong></label>
                 <div class="form-check d-inline" style="margin: 10px;"><input class="form-check-input" type="radio" id="formCheck" name="sex" value="M"><label class="form-check-label" for="formCheck-1" style="font-family: Montserrat, sans-serif;">Male</label></div>
                 <div class="form-check d-inline" style="margin: 10px;"><input class="form-check-input" type="radio" id="formCheck" name="sex" value="F"><label class="form-check-label" for="formCheck-2" style="font-family: Montserrat, sans-serif;">Female</label></div>
                 <div class="form-check d-inline" style="margin: 10px;"><input class="form-check-input" type="radio" id="formCheck" name="sex" value="O"><label class="form-check-label" for="formCheck-3" style="font-family: Montserrat, sans-serif;">Others</label></div>
             </div>
-            <div class="form-group" placeholder="Age"><label style="font-family: Montserrat, sans-serif;"><strong>Height (in ft)</strong></label><input class="form-control d-inline height" type="text" required="" placeholder="5.8" style="font-family: Montserrat, sans-serif;"></div>
+            <div class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Height (in ft)</strong></label><input class="form-control d-inline height" type="text" required="" placeholder="5.8" style="font-family: Montserrat, sans-serif;"></div>
             <div class="form-group"
-                placeholder="Age"><label style="font-family: Montserrat, sans-serif;"><strong>Weight (in kgs)</strong></label><input class="form-control d-inline weight" type="text" required="" placeholder="62 kg" style="font-family: Montserrat, sans-serif;"></div>
+                ><label style="font-family: Montserrat, sans-serif;"><strong>Weight (in kgs)</strong></label><input class="form-control d-inline" type="text" required="" placeholder="62 kg" style="font-family: Montserrat, sans-serif;" name="weight"></div>
             <div class="form-group"
-                placeholder="Age"><label style="font-family: Montserrat, sans-serif;"><strong>Bloodgroup</strong></label><select class="form-control bgp'" style="font-family: Montserrat, sans-serif;" required=""><option value="">Select Your Blood Group</option><option value="A+">A +ve</option><option value="A-">A -ve</option><option value="B+">B +ve</option><option value="B-">B -ve</option><option value="AB+">AB +ve</option><option value="AB-">AB -ve</option><option value="O+">O +ve</option><option value="O-">O -ve</option></select></div>
+                ><label style="font-family: Montserrat, sans-serif;"><strong>Bloodgroup</strong></label><select class="form-control" name="bgp"style="font-family: Montserrat, sans-serif;" required=""><option value="">Select Your Blood Group</option><option value="A+">A +ve</option><option value="A-">A -ve</option><option value="B+">B +ve</option><option value="B-">B -ve</option><option value="AB+">AB +ve</option><option value="AB-">AB -ve</option><option value="O+">O +ve</option><option value="O-">O -ve</option></select></div>
             <div
-                class="form-group" placeholder="Age"><label style="font-family: Montserrat, sans-serif;"><strong>Medication</strong></label><input class="form-control medic" type="text" required="" placeholder="Medicine 1, Medicine 2, Medicine 3 ..." style="font-family: Montserrat, sans-serif;"></div>
+                class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Medication</strong></label><input class="form-control" type="text" required="" placeholder="Medicine 1, Medicine 2, Medicine 3 ..." name="medic" style="font-family: Montserrat, sans-serif;"></div>
     <div
-        class="form-group" placeholder="Age"><label style="font-family: Montserrat, sans-serif;"><strong>Allergy</strong></label><input class="form-control allergy" type="text" required="" placeholder="If you have any allergy, elaborate..." style="font-family: Montserrat, sans-serif;"></div>
+        class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Allergy</strong></label><input class="form-control" type="text" required="" placeholder="If you have any allergy, elaborate..." style="font-family: Montserrat, sans-serif;" name="allergy"></div>
         <div
-            class="form-group" placeholder="Age"><label style="font-family: Montserrat, sans-serif;"><strong>Diseases</strong></label><input class="form-control diseases" type="text" required="" placeholder="If you have any diseases, elaborate..." style="font-family: Montserrat, sans-serif;"></div>
+            class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Diseases</strong></label><input class="form-control" type="text" required="" placeholder="If you have any diseases, elaborate..." style="font-family: Montserrat, sans-serif;" name="diseases"></div>
             <div
-                class="form-group" placeholder="Age"><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Medical Report</strong></label><input type="file" class="medical_report" style="font-family: Montserrat, sans-serif;"></div>
-                <div class="form-group" placeholder="Age"><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Extra Documents</strong></label><input type="file" class="medical_report" style="font-family: Montserrat, sans-serif;"></div>
-                <div class="form-group" placeholder="Age"><label style="font-family: Montserrat, sans-serif;"><strong>Other Details</strong></label><input class="form-control extra" type="text" required="" placeholder="If you want to provide any extra infromation..." style="font-family: Montserrat, sans-serif;"></div>
+                class="form-group" ><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Medical Report</strong></label><input type="file" name="medical_report" style="font-family: Montserrat, sans-serif;"></div>
+                <div class="form-group" ><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Extra Documents</strong></label><input type="file" class="medical_report" style="font-family: Montserrat, sans-serif;"></div>
+                <div class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Other Details</strong></label><input class="form-control" name="extra_docs" type="text" required="" placeholder="If you want to provide any extra infromation..." style="font-family: Montserrat, sans-serif;"></div>
                 <button
                     class="btn btn-outline-dark btn-block" type="submit" style="font-family: Montserrat, sans-serif;margin-top: 20px;">Add/Edit</button>
                     </form>
