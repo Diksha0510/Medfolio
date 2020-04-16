@@ -16,7 +16,10 @@ If the user is verified, then both individual and doctors have different privile
 * MySQL for database.
 
 ## Screenshots
+[Click here to view!]()
 
+## Tables Used
+[Click here to view!](https://github.com/Diksha0510/Medfolio/blob/master/Table_Strucutre.txt)
 
 ## Contributors 
 * Diksha Choudhary (diksha2.choudhary83@gmail.com)
