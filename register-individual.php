@@ -16,14 +16,14 @@
 </head>
 
 <body>
-  <?php include('register-individualPHP.php'); ?>
+
     <nav class="navbar navbar-light navbar-expand-md" style="background-color: #ffffff;">
         <div class="container-fluid"><a class="navbar-brand d-xl-flex align-items-xl-center" href="#" style="font-family: Montserrat, sans-serif;"><br><div class="d-none d-xl-flex medfolio" style="padding-top: 15px;"><p class="d-inline d-xl-flex" style="color: rgba(239,29,54,0.9);"><strong>Med</strong></p><p class="d-inline"><strong>folio</strong></p><p><i class="fa fa-heartbeat heart" style="font-size: 18px;margin: 3px;"></i></p></div></a>
             <button
                 data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse d-block" id="navcol-1">
                     <ul class="nav navbar-nav d-block d-xl-flex" style="width: 100%;">
-                        <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="login.html"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Login</button></a></li>
+                        <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="login.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Login</button></a></li>
                         <li class="nav-item d-inline float-right"
                             role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="button" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;" disabled="">Register</button></a></li>
                     </ul>
@@ -37,17 +37,21 @@
             <p class="d-inline"><i class="fa fa-heartbeat d-inline heart" style="font-size: 60px;margin: 3px;"></i></p>
         </div>
     </div>
+    <?php include('register-individualPHP.php'); ?>
     <div class="login-clean">
         <h2 style="text-align: center;font-family: Montserrat, sans-serif;"><strong>REGISTER</strong></h2>
         <form method="post">
             <div class="illustration"><i class="far fa-heart"></i></div>
             <div class="form-group"><input class="form-control" name="name" type="text" placeholder="Name" style="font-family: Montserrat, sans-serif;" required=""></div>
-            <div class="form-group"><input class="form-control" name="mail" type="text" placeholder  ="Email" style="font-family: Montserrat, sans-serif;" required="" inputmode="email"></div>
+            <h5 style="color:red; float:left; font-size:12px;" class="mt-2"><?php echo $errorName; ?></h5>
+            <div class="form-group"><input class="form-control" name="mail" type="text" placeholder="Email" style="font-family: Montserrat, sans-serif;" required="" inputmode="email"></div>
             <div class="form-group"><input class="form-control" name="pass" type="password" placeholder="Password" style="font-family: Montserrat, sans-serif;" required=""></div>
-            <div class="form-group"><input class="form-control" name="rp_pass" type="text" placeholder="Re-type Password" style="font-family: Montserrat, sans-serif;" inputmode="numeric" required=""></div>
-            <div class="form-group"><input class="form-control" name="aan" type="text" placeholder="Aadhar Number" style="font-family: Montserrat, sans-serif;" inputmode="numeric" required=""></div><button class="btn btn-primary btn-block" id="register_individual" type="submit" style="font-family: Montserrat, sans-serif;"><strong>Register</strong></button>
-            <!-- <div
-                style="margin-top: 20px;"><input class="form-control d-inline" type="text" placeholder="OTP" style="font-family: Montserrat, sans-serif;width: 80%;border-radius: 0;"><button class="btn btn-primary" type="button" style="width: 20%;height: 42px;margin-top: 0;border-radius: 0;"><i class="fas fa-check"></i></button></div> -->
+            <h5 style="color:red; float:left; font-size:12px;" class="mt-2"><?php echo $errorPass; ?></h5>
+            <div class="form-group"><input class="form-control" name="rp_pass" type="password" placeholder="Retype Password" style="font-family: Montserrat, sans-serif;" required=""></div>
+            <h5 style="color:red; float:left; font-size:12px;" class="mt-2"><?php echo $errorRepass; ?></h5>
+            <div class="form-group"><input class="form-control" name="aan" type="text" placeholder="Aadhar Number" style="font-family: Montserrat, sans-serif;" inputmode="numeric" required=""></div>
+            <button class="btn btn-primary btn-block" id="register_individual" type="submit" style="font-family: Montserrat, sans-serif;"><strong>Register</strong></button>
+
     </form>
     </div>
     <div class="footer-clean" style="border-top: 1px solid grey;">

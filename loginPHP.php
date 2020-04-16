@@ -8,13 +8,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $error = "Invalid Login Credentials!";
     }
     else{
-          if($_SESSION["type"]="doctor")
+          if($_SESSION["type"]=="doctor")
           {
-            session_start();
+            // session_start();
             header('Location: doctor_profile.php');
           }
           else {
-            session_start();
+            // session_start();
             header('Location: patients_profile.php');
           }
     }

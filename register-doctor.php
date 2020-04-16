@@ -16,6 +16,7 @@
 </head>
 
 <body>
+  <?php include('register-doctorPHP.php'); ?>
     <nav class="navbar navbar-light navbar-expand-md" style="background-color: #ffffff;">
         <div class="container-fluid"><a class="navbar-brand d-xl-flex align-items-xl-center" href="#" style="font-family: Montserrat, sans-serif;"><br><div class="d-none d-xl-flex medfolio" style="padding-top: 15px;"><p class="d-inline d-xl-flex" style="color: rgba(239,29,54,0.9);"><strong>Med</strong></p><p class="d-inline"><strong>folio</strong></p><p><i class="fa fa-heartbeat heart" style="font-size: 18px;margin: 3px;"></i></p></div></a>
             <button
@@ -36,19 +37,20 @@
             <p class="d-inline"><i class="fa fa-heartbeat d-inline heart" style="font-size: 60px;margin: 3px;"></i></p>
         </div>
     </div>
-    <?php include('register_doctorPHP.php'); ?>
+
     <div class="login-clean">
         <h2 style="text-align: center;font-family: Montserrat, sans-serif;"><strong>REGISTER</strong></h2>
         <form method="post">
             <div class="illustration"><i class="far fa-heart"></i></div>
-            <div class="form-group"><input class="form-control name" type="text" placeholder="Name" style="font-family: Montserrat, sans-serif;" required=""></div>
-            <div class="form-group"><input class="form-control mail" type="text" placeholder="Email" style="font-family: Montserrat, sans-serif;" required="" inputmode="email"></div>
-            <div class="form-group"><input class="form-control pass" type="password" placeholder="Password" style="font-family: Montserrat, sans-serif;" required=""></div>
-            <div class="form-group"><input class="form-control rp_pass" type="password" placeholder="Repeat Password" style="font-family: Montserrat, sans-serif;" required=""></div>
-            <div class="form-group"><input class="form-control din" type="text" placeholder="Doctor's Identification Number" style="font-family: Montserrat, sans-serif;" required=""></div>
-            <div class="form-group"><input class="form-control aan" type="text" placeholder="Aadhar Number" style="font-family: Montserrat, sans-serif;" inputmode="numeric" required=""></div>
+            <div class="form-group"><input class="form-control" name="nme" type="text" placeholder="Name" style="font-family: Montserrat, sans-serif;" required=""></div>
+            <div class="form-group"><input class="form-control" name="mail" type="text" placeholder="Email" style="font-family: Montserrat, sans-serif;" required="" inputmode="email"></div>
+            <div class="form-group"><input class="form-control" name="pass" type="password" placeholder="Password" style="font-family: Montserrat, sans-serif;" required=""></div>
+            <div class="form-group"><input class="form-control" name="rp_pass" type="password" placeholder="Repeat Password" style="font-family: Montserrat, sans-serif;" required=""></div>
+            <div class="form-group"><input class="form-control" name="din" type="text" placeholder="Doctor's Identification Number" style="font-family: Montserrat, sans-serif;" required=""></div>
+            <div class="form-group"><input class="form-control" name="aan" type="text" placeholder="Aadhar Number" style="font-family: Montserrat, sans-serif;" inputmode="numeric" required=""></div>
             <div class="form-group"><label style="font-family: Montserrat, sans-serif;margin-bottom: 2px;">Year of registration</label><input class="form-control" name="yor" type="date" required="" style="font-family: Montserrat, sans-serif;"></div>
-            <div class="form-group"><label style="font-family: Montserrat, sans-serif;margin-bottom: 2px;">State Medical Council's&nbsp; Certificate</label><input type="file" class="mcc" name="mc" style="font-family: Montserrat, sans-serif;" required=""></div><button class="btn btn-primary btn-block"
+            <!-- <div class="form-group"><label style="font-family: Montserrat, sans-serif;margin-bottom: 2px;">State Medical Council's&nbsp; Certificate</label><input type="file" class="mcc" name="mc" style="font-family: Montserrat, sans-serif;" required=""></div> -->
+            <button class="btn btn-primary btn-block"
                 id="register_doctor" type="submit" style="border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;"><strong>Register</strong></button>
             <p style="font-family: Montserrat, sans-serif;color: rgb(24,173,0);margin-top: 20px;"><strong>Once your profile is validated we'll let you know through mail!</strong></p>
         </form>

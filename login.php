@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -16,6 +17,7 @@
 </head>
 
 <body>
+  <?php include('loginPHP.php'); ?>
     <nav class="navbar navbar-light navbar-expand-md" style="background-color: #ffffff;">
         <div class="container-fluid"><a class="navbar-brand d-xl-flex align-items-xl-center" href="#" style="font-family: Montserrat, sans-serif;"><br><div class="d-none d-xl-flex medfolio" style="padding-top: 15px;"><p class="d-inline d-xl-flex" style="color: rgba(239,29,54,0.9);"><strong>Med</strong></p><p class="d-inline"><strong>folio</strong></p><p><i class="fa fa-heartbeat heart" style="font-size: 18px;margin: 3px;"></i></p></div></a>
             <button
@@ -24,7 +26,7 @@
                     <ul class="nav navbar-nav d-block d-xl-flex" style="width: 100%;">
                         <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;" disabled="">Login</button></a></li>
                         <li class="nav-item d-inline float-right"
-                            role="presentation" style="margin: 10px;"><a class="nav-link" href="register.html"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Register</button></a></li>
+                            role="presentation" style="margin: 10px;"><a class="nav-link" href="register.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Register</button></a></li>
                     </ul>
                 </div>
         </div>
@@ -38,7 +40,7 @@
     </div>
     <div class="login-clean">
         <h2 style="text-align: center;font-family: Montserrat, sans-serif;"><strong>LOGIN</strong></h2>
-        <form method="post">
+        <form method="POST">
             <div class="illustration"><i class="far fa-heart"></i></div>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" style="font-family: Montserrat, sans-serif;"></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" style="font-family: Montserrat, sans-serif;"></div>

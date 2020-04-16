@@ -1,8 +1,9 @@
 <?php
 include('mysql.php');
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-  $aan=$_POST[""];
-  $name=$_POST[""];
-  $details=fetchData($aan);
+  $aan=$_POST["aadhar_number"];
+  $name=$_POST["aadhar_name"];
+  fetchData($aan);
+  echo $_SESSION["age"];
 }
  ?>

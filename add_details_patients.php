@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -14,8 +15,8 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
-
 <body>
+  <?php include('add_details_patientsPHP.php'); ?>
     <nav class="navbar navbar-light navbar-expand-md" style="background-color: #ffffff;">
         <div class="container-fluid"><a class="navbar-brand d-xl-flex align-items-xl-center" href="#" style="font-family: Montserrat, sans-serif;"><br><div class="d-none d-xl-flex medfolio" style="padding-top: 15px;"><p class="d-inline d-xl-flex" style="color: rgba(239,29,54,0.9);"><strong>Med</strong></p><p class="d-inline"><strong>folio</strong></p><p><i class="fa fa-heartbeat heart" style="font-size: 18px;margin: 3px;"></i></p></div></a>
             <button
@@ -24,7 +25,7 @@
                     <ul class="nav navbar-nav d-block d-xl-flex" style="width: 100%;">
                         <li class="nav-item details" role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light active" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">Add/Edit Details</button></a></li>
                         <li
-                            class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="patients_profile.html"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">{User's Name}</button></a></li>
+                            class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="patients_profile.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">{User's Name}</button></a></li>
                             <li class="nav-item details"
                                 role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">SignOut</button></a></li>
                     </ul>
@@ -44,21 +45,21 @@
                 <div class="form-check d-inline" style="margin: 10px;"><input class="form-check-input" type="radio" id="formCheck" name="sex" value="F"><label class="form-check-label" for="formCheck-2" style="font-family: Montserrat, sans-serif;">Female</label></div>
                 <div class="form-check d-inline" style="margin: 10px;"><input class="form-check-input" type="radio" id="formCheck" name="sex" value="O"><label class="form-check-label" for="formCheck-3" style="font-family: Montserrat, sans-serif;">Others</label></div>
             </div>
-            <div class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Height (in ft)</strong></label><input class="form-control d-inline height" type="text" required="" placeholder="5.8" style="font-family: Montserrat, sans-serif;"></div>
+            <div class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Height (in ft)</strong></label><input class="form-control d-inline" name="height" type="text" required="" placeholder="5.8" style="font-family: Montserrat, sans-serif;"></div>
             <div class="form-group"
                 ><label style="font-family: Montserrat, sans-serif;"><strong>Weight (in kgs)</strong></label><input class="form-control d-inline" type="text" required="" placeholder="62 kg" style="font-family: Montserrat, sans-serif;" name="weight"></div>
             <div class="form-group"
-                ><label style="font-family: Montserrat, sans-serif;"><strong>Bloodgroup</strong></label><select class="form-control" name="bgp"style="font-family: Montserrat, sans-serif;" required=""><option value="">Select Your Blood Group</option><option value="A+">A +ve</option><option value="A-">A -ve</option><option value="B+">B +ve</option><option value="B-">B -ve</option><option value="AB+">AB +ve</option><option value="AB-">AB -ve</option><option value="O+">O +ve</option><option value="O-">O -ve</option></select></div>
+                ><label style="font-family: Montserrat, sans-serif;"><strong>Bloodgroup</strong></label><select class="form-control" name="bgp" style="font-family: Montserrat, sans-serif;" required=""><option value="">Select Your Blood Group</option><option value="A+">A +ve</option><option value="A-">A -ve</option><option value="B+">B +ve</option><option value="B-">B -ve</option><option value="AB+">AB +ve</option><option value="AB-">AB -ve</option><option value="O+">O +ve</option><option value="O-">O -ve</option></select></div>
             <div
                 class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Medication</strong></label><input class="form-control" type="text" required="" placeholder="Medicine 1, Medicine 2, Medicine 3 ..." name="medic" style="font-family: Montserrat, sans-serif;"></div>
     <div
         class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Allergy</strong></label><input class="form-control" type="text" required="" placeholder="If you have any allergy, elaborate..." style="font-family: Montserrat, sans-serif;" name="allergy"></div>
         <div
             class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Diseases</strong></label><input class="form-control" type="text" required="" placeholder="If you have any diseases, elaborate..." style="font-family: Montserrat, sans-serif;" name="diseases"></div>
-            <div
+            <!-- <div
                 class="form-group" ><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Medical Report</strong></label><input type="file" name="medical_report" style="font-family: Montserrat, sans-serif;"></div>
-                <div class="form-group" ><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Extra Documents</strong></label><input type="file" class="medical_report" style="font-family: Montserrat, sans-serif;"></div>
-                <div class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Other Details</strong></label><input class="form-control" name="extra_docs" type="text" required="" placeholder="If you want to provide any extra infromation..." style="font-family: Montserrat, sans-serif;"></div>
+                <div class="form-group" ><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Extra Documents</strong></label><input type="file" class="other_docs" style="font-family: Montserrat, sans-serif;"></div> -->
+                <div class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Other Details</strong></label><input class="form-control" name="other_det" type="text" required="" placeholder="If you want to provide any extra infromation..." style="font-family: Montserrat, sans-serif;"></div>
                 <button
                     class="btn btn-outline-dark btn-block" type="submit" style="font-family: Montserrat, sans-serif;margin-top: 20px;">Add/Edit</button>
                     </form>
@@ -84,5 +85,4 @@
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

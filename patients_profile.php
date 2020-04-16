@@ -22,7 +22,7 @@
                 data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse d-block" id="navcol-1">
                     <ul class="nav navbar-nav d-block d-xl-flex" style="width: 100%;">
-                        <li class="nav-item details" role="presentation" style="margin: 10px;"><a class="nav-link" href="add_details_patients.html"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">Add/Edit Details</button></a></li>
+                        <li class="nav-item details" role="presentation" style="margin: 10px;"><a class="nav-link" href="add_details_patients.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">Add/Edit Details</button></a></li>
                         <li
                             class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light active" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">{User's Name}</button></a></li>
                             <li class="nav-item details"
