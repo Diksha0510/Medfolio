@@ -1,0 +1,68 @@
+MariaDB [Medfolio]> show tables;
++--------------------+
+| Tables_in_Medfolio |
++--------------------+
+| DOCTOR             |
+| PATIENT            |
+| Register           |
++--------------------+
+
+
+MariaDB [Medfolio]> desc DOCTOR;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| UID                 | int(11)     | YES  | MUL | NULL    |       |
+| DIN                 | int(20)     | YES  |     | NULL    |       |
+| YOR                 | int(16)     | YES  |     | NULL    |       |
+| MEDICAL_CERTIFICATE | varchar(30) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+
+
+MariaDB [Medfolio]> desc PATIENT;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| UID             | int(11)     | YES  | MUL | NULL    |       |
+| NAME            | varchar(50) | YES  |     | NULL    |       |
+| AADHAAR_NUMBER  | int(16)     | YES  |     | NULL    |       |
+| AGE             | int(4)      | YES  |     | NULL    |       |
+| GENDER          | char(6)     | YES  |     | NULL    |       |
+| HEIGHT          | float       | YES  |     | NULL    |       |
+| WEIGHT          | float       | YES  |     | NULL    |       |
+| BLOOD_GROUP     | char(6)     | YES  |     | NULL    |       |
+| MEDICATION      | text        | YES  |     | NULL    |       |
+| ALLERGY         | text        | YES  |     | NULL    |       |
+| DISEASES        | text        | YES  |     | NULL    |       |
+| MEDICAL_REPORT  | varchar(15) | YES  |     | NULL    |       |
+| EXTRA_DOCUMENTS | varchar(15) | YES  |     | NULL    |       |
+| OTHER_DETAILS   | text        | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+
+
+
+MariaDB [Medfolio]> desc Register;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| UID            | int(10)      | NO   | PRI | NULL    | auto_increment |
+| NAME           | varchar(50)  | NO   |     | NULL    |                |
+| EMAIL          | varchar(50)  | NO   |     | NULL    |                |
+| PASSWORD       | varchar(255) | YES  |     | NULL    |                |
+| AADHAAR_NUMBER | int(16)      | NO   |     | NULL    |                |
+| TYPE           | varchar(10)  | NO   |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+
+
+
+
+
+
+Mysql commands to make tables,
+------------------------------
+
+create table Register (UID INT(10) SIGNED AUTO_INCREMENT PRIMARY KEY, NAME VARCHAR(50) NOT NULL, EMAIL VARCHAR(50) NOT NULL, PASSWORD VARCHAR(255) NOT NULL, AADHAAR_NUMBER INT(16) NOT NULL, TYPE VARCHAR(10) NOT NULL);
+
+create table DOCTOR(UID INT, DIN INT(20), YOR INT(16), MEDICAL_CERTIFICATE VARCHAR(30), FOREIGN KEY (UID) REFERENCES Register (UID));
+
+create tablePATIENT(UID INT, NAME VARCHAR(50), AADHAAR_NUMBER INT(16), AGE INT(4), GENDER CHAR(6), HEIGHT FLOAT, WEIGHT FLOAT, BLOOD_GROUP CHAR(6), MEDICATION TEXT, ALLERGY TEXT, DISEASES TEXT, MEDICAL_REPORT VARCHAR(15), EXTRA_DOCUMENTS VARCHAR(15), OTHER_DETAILS TEXT, FOREIGN KEY(UID) REFERENCES Register (UID));
