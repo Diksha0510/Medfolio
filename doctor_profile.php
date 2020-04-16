@@ -1,6 +1,4 @@
-<?php session_start(); if (!$_SESSION["uid"]) {
-    header('Location: login.php');
-} ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
