@@ -1,4 +1,5 @@
 <?php
+  // session_start();
     function DatabaseConnection()
     {
         $servername = "localhost";
@@ -42,6 +43,8 @@
                 $stmt->bindParam(":name", $name);
                 $stmt->bindParam(":aadhar", $aan);
                 $stmt->execute();
+                $_SESSION["aan"]=$aan;
+                $_SESSION["name"]=$name;
             }
             catch(PDOException $exception_error)
             {
@@ -79,7 +82,10 @@
         $stmt->bindParam(":din", $din);
         $stmt->bindParam(":yor", $yor);
         $stmt->execute();
-
+        $_SESSION["name"]=$name;
+        $_SESSION["aan"]=$aan;
+        $_SESSION["din"]=$din;
+        $_SESSION["yor"]=$yor;
       }
       catch (PDOException $exception_error)
       {
@@ -91,19 +97,30 @@
 		try
 		{
 			$connection = DatabaseConnection();
-			$stmt = $connection->prepare("select UID, TYPE from Register where EMAIL = :email and PASSWORD = :password");
+			$stmt = $connection->prepare("select UID, NAME, AADHAAR_NUMBER, TYPE from Register where EMAIL = :email and PASSWORD = :password");
 			$stmt->bindParam(":email", $email);
 			$stmt->bindParam(":password", $pass);
 			$stmt->execute();
       $row=$stmt->fetch();
 			$count = $stmt->rowCount();
 			if($count > 0){
-
+        $_SESSION["aan"]=$row["AADHAAR_NUMBER"];
         $_SESSION["type"]=$row["TYPE"];
-
+        $_SESSION["name"]=$row["NAME"];
         $_SESSION["uid"]=$row["UID"];
-        // setcookie($type, $uid, time() + (86400 * 30), "/");
-        // echo $_COOKIE[$uid];
+
+        if($_SESSION["type"] == "doctor")
+        {
+          $stmt = $connection->prepare("select DIN, YOR from DOCTOR where UID = :uid");
+    			$stmt->bindParam(":uid", $_SESSION["uid"]);
+    			$stmt->execute();
+          $row=$stmt->fetch();
+    			$count = $stmt->rowCount();
+    			if($count > 0){
+            $_SESSION["din"]=$row["DIN"];
+            $_SESSION["yor"]=$row["YOR"];
+          }
+        }
 				return 1;
 			}
 			else{
@@ -139,7 +156,7 @@
         {
           $connection = DatabaseConnection();
           $uid=(int)$_SESSION["uid"];
-          $stmt = $connection->prepare("insert into PATIENT (AGE, GENDER, HEIGHT, WEIGHT, BLOOD_GROUP, MEDICATION, ALLERGY, DISEASES, OTHER_DETAILS) VALUES (:age, :gender, :height, :weight, :bloodgroup, :medication, :allergy, :diseases, :other_det) where UID=:uid");
+          $stmt = $connection->prepare("update PATIENT set AGE = :age, GENDER = :gender, HEIGHT = :height, WEIGHT = :weight, BLOOD_GROUP = :bloodgroup, MEDICATION = :medication, ALLERGY = :allergy, DISEASES = :diseases, OTHER_DETAILS = :other_det where UID = :uid");
           $stmt->bindParam(":age", $age);
           $stmt->bindParam(":gender", $gender);
           $stmt->bindParam(":height", $height);
@@ -177,6 +194,7 @@
           $_SESSION["allergy"]=$row["ALLERGY"];
           $_SESSION["diseases"]=$row["DISEASES"];
           $_SESSION["other_det"]=$row["OTHER_DETAILS"];
+          return 1;
         }
         else {
           echo "This person is not registered";

@@ -22,8 +22,8 @@
                 data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse d-block" id="navcol-1">
                     <ul class="nav navbar-nav d-block d-xl-flex" style="width: 100%;">
-                        <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Login</button></li>
-                        <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Register</button></li>
+                        <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a href="login.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Login</button></a></li>
+                        <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a href="index.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Register</button></a></li>
                     </ul>
                 </div>
         </div>
@@ -35,7 +35,7 @@
             <p class="d-inline"><i class="fa fa-heartbeat d-inline heart" style="font-size: 60px;margin: 3px;"></i></p>
         </div>
     </div>
-    <div class="login-clean">
+    <!-- <div class="login-clean">
         <h2 style="text-align: center;font-family: Montserrat, sans-serif;"><strong>REGISTER</strong></h2>
         <form method="post">
             <div class="illustration"><i class="far fa-heart"></i></div>
@@ -43,7 +43,10 @@
                 <div class="d-block"><a href="register-doctor.php"><button class="btn btn-primary" type="button" style="border-radius: 0;width: 50%;border-right: 1px solid;font-family: Montserrat, sans-serif;"><strong>Doctor</strong></button></a><a href="register-individual.php"><button class="btn btn-primary" type="button" style="border-radius: 0;width: 50%;border-left: 1px solid;font-family: Montserrat, sans-serif;"><strong>Individual</strong></button></a></div>
             </div>
         </form>
-    </div>
+    </div> -->
+    <div class="login-clean">
+        <h2 style="text-align: center;font-family: Montserrat, sans-serif;"><strong>Please contact the admin at admin.medfolio@gmail.com. </strong></h2>
+      </div>
     <div class="footer-clean" style="border-top: 1px solid grey;">
         <footer>
             <div class="container">

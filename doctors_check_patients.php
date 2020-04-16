@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); if (!$_SESSION["uid"]) {
+    header('Location: login.php');
+} ?>
 <!DOCTYPE html>
 <html>
 
@@ -28,9 +30,9 @@
                         <li class="nav-item details"
                             role="presentation" style="margin: 10px;"><a class="nav-link" href="add_details_doctors.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">Add/Edit Details</button></a></li>
                         <li
-                            class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="doctor_profile.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">{Doctor's Name}</button></a></li>
+                            class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="doctor_profile.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;"><?php echo $_SESSION["name"]; ?></button></a></li>
                             <li class="nav-item details"
-                                role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">SignOut</button></a></li>
+                                role="presentation" style="margin: 10px;"><a class="nav-link" href="login.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">SignOut</button></a></li>
                     </ul>
                 </div>
         </div>
@@ -43,10 +45,9 @@
                         inputmode="numeric"></div>
                 <div class="form-group"><label style="font-family: Montserrat, sans-serif;"><strong>Patient's Name</strong></label><input class="form-control" name="aadhar_name" type="text" style="font-family: Montserrat, sans-serif;" placeholder="John Doe" required=""></div>
                 <button
-                    class="btn btn-outline-dark btn-block" type="submit">Check</button>
+                    class="btn btn-outline-dark btn-block" type="submit" name="check">Check</button>
             </form>
         </div>
-    </div>
     <div class="footer-clean" style="border-top: 1px solid grey;">
         <footer>
             <div class="container">

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -25,7 +26,7 @@
                     <ul class="nav navbar-nav d-block d-xl-flex" style="width: 100%;">
                         <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="login.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Login</button></a></li>
                         <li class="nav-item d-inline float-right"
-                            role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="button" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;" disabled="">Register</button></a></li>
+                            role="presentation" style="margin: 10px;"><a class="nav-link" href="index.php"><button class="btn btn-light" type="button" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;" disabled="">Register</button></a></li>
                     </ul>
                 </div>
         </div>

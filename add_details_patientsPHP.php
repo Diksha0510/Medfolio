@@ -10,18 +10,18 @@
     $medication=$_POST["medic"];
     $allergy=$_POST["allergy"];
     $diseases=$_POST["diseases"];
+    // $medical_report=$_FILES["medical_report"]["name"];
+    // $other_documents=$_FILES["other_docs"]["name"];
     $other_details=$_POST["other_det"];
-    // $medical_report=$_FILES[""]["name"];
-    // $medical_rep = "/var/www/html/Medfolio/medical_report/";
-    // $mr_target_file = $medical_rep.basename($_FILES[""]["name"]);
-    // $mr_FileType = strtolower(pathinfo($mr_target_file,PATHINFO_EXTENSION));
-    // if(!(move_uploaded_file($_FILES[""]["tmp_name"],$mr_target_file)))
+    // $medical_rep = "/home/diksha/Downloads/Medfolio/medical_report/";
+    // $mr_target_file = rand(1000,100000).".".strtolower(pathinfo($mr_target_file,PATHINFO_EXTENSION));
+    // if(!(move_uploaded_file($_FILES["medical_report"]["tmp_name"],$medical_rep.$mr_target_file)))
     //   $errorFile="could not save file";
-    // $other_documents=$_FILES[""]["name"];
+    //   echo $errorFile;
     // $other_doc = "/var/www/html/Medfolio/other_documents/";
-    // $od_target_file = $other_doc.basename($_FILES[""]["name"]);
+    // $od_target_file = $other_doc.basename($_FILES["other_docs"]["name"]);
     // $od_FileType = strtolower(pathinfo($od_target_file,PATHINFO_EXTENSION));
-    // if(!(move_uploaded_file($_FILES[""]["tmp_name"],$od_target_file)))
+    // if(!(move_uploaded_file($_FILES["other_docs"]["tmp_name"],$od_target_file)))
     //   $errorFile="could not save file";
     addDetails($age, $gender, $height, $weight, $bloodgroup, $medication, $allergy, $diseases, $other_details);
   }

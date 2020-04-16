@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -23,9 +24,9 @@
                 data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse d-block" id="navcol-1">
                     <ul class="nav navbar-nav d-block d-xl-flex" style="width: 100%;">
-                        <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="login.html"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Login</button></a></li>
+                        <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="login.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Login</button></a></li>
                         <li class="nav-item d-inline float-right"
-                            role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="button" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;" disabled="">Register</button></a></li>
+                            role="presentation" style="margin: 10px;"><a class="nav-link" href="index.php"><button class="btn btn-light" type="button" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;" disabled="">Register</button></a></li>
                     </ul>
                 </div>
         </div>
@@ -52,7 +53,7 @@
             <!-- <div class="form-group"><label style="font-family: Montserrat, sans-serif;margin-bottom: 2px;">State Medical Council's&nbsp; Certificate</label><input type="file" class="mcc" name="mc" style="font-family: Montserrat, sans-serif;" required=""></div> -->
             <button class="btn btn-primary btn-block"
                 id="register_doctor" type="submit" style="border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;"><strong>Register</strong></button>
-            <p style="font-family: Montserrat, sans-serif;color: rgb(24,173,0);margin-top: 20px;"><strong>Once your profile is validated we'll let you know through mail!</strong></p>
+            <p style="font-family: Montserrat, sans-serif;color: rgb(24,173,0);margin-top: 20px;"><strong>Once your profile is validated we'll let you know through mail! Please try logging in after 2-3 days. </strong></p>
         </form>
     </div>
     <div class="footer-clean" style="border-top: 1px solid grey;">

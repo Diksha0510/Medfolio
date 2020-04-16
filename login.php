@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_destroy(); session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -24,9 +24,9 @@
                 data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse d-block" id="navcol-1">
                     <ul class="nav navbar-nav d-block d-xl-flex" style="width: 100%;">
-                        <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;" disabled="">Login</button></a></li>
+                        <!-- <li class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;" disabled="">Login</button></a></li> -->
                         <li class="nav-item d-inline float-right"
-                            role="presentation" style="margin: 10px;"><a class="nav-link" href="register.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Register</button></a></li>
+                            role="presentation" style="margin: 10px;"><a class="nav-link" href="index.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">Register</button></a></li>
                     </ul>
                 </div>
         </div>
@@ -44,7 +44,7 @@
             <div class="illustration"><i class="far fa-heart"></i></div>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" style="font-family: Montserrat, sans-serif;"></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" style="font-family: Montserrat, sans-serif;"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="font-family: Montserrat, sans-serif;"><strong>Log In</strong></button></div><a class="forgot" href="#" style="font-family: Montserrat, sans-serif;">Forgot your email or password?</a></form>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="font-family: Montserrat, sans-serif;"><strong>Log In</strong></button></div><a class="forgot" href="forgot_pass.php" style="font-family: Montserrat, sans-serif;">Forgot your email or password?</a></form>
     </div>
     <div class="footer-clean" style="border-top: 1px solid grey;">
         <footer>

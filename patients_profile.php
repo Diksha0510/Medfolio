@@ -1,3 +1,6 @@
+<?php session_start(); if (!$_SESSION["uid"]) {
+    header('Location: login.php');
+} ?>
 <!DOCTYPE html>
 <html>
 
@@ -16,6 +19,7 @@
 </head>
 
 <body>
+  <?php include('mysql.php'); ?>
     <nav class="navbar navbar-light navbar-expand-md" style="background-color: #ffffff;">
         <div class="container-fluid"><a class="navbar-brand d-xl-flex align-items-xl-center" href="#" style="font-family: Montserrat, sans-serif;"><br><div class="d-none d-xl-flex medfolio" style="padding-top: 15px;"><p class="d-inline d-xl-flex" style="color: rgba(239,29,54,0.9);"><strong>Med</strong></p><p class="d-inline"><strong>folio</strong></p><p><i class="fa fa-heartbeat heart" style="font-size: 18px;margin: 3px;"></i></p></div></a>
             <button
@@ -24,18 +28,18 @@
                     <ul class="nav navbar-nav d-block d-xl-flex" style="width: 100%;">
                         <li class="nav-item details" role="presentation" style="margin: 10px;"><a class="nav-link" href="add_details_patients.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">Add/Edit Details</button></a></li>
                         <li
-                            class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light active" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">{User's Name}</button></a></li>
+                            class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light active" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;"><?php echo $_SESSION["name"]; ?></button></a></li>
                             <li class="nav-item details"
-                                role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">SignOut</button></a></li>
+                                role="presentation" style="margin: 10px;"><a class="nav-link" href="login.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">SignOut</button></a></li>
                     </ul>
                 </div>
         </div>
     </nav>
     <div class="container" style="padding-top: 50px;padding-bottom: 50px;margin-bottom: 20px;">
-        <h1 id="d_name" style="text-align: center;font-family: Montserrat, sans-serif;"><strong>{User's Name}</strong></h1>
+        <h1 id="d_name" style="text-align: center;font-family: Montserrat, sans-serif;"><strong><?php echo $_SESSION["name"]; ?></strong></h1>
         <div class="d-block" style="text-align: center;margin: 10px;">
             <p class="d-inline" style="text-align: center;font-family: Montserrat, sans-serif;">Aadhar Number:&nbsp;</p>
-            <p class="d-inline aadhar_number" style="text-align: center;font-family: Montserrat, sans-serif;"><strong>{Aadhar Number}</strong></p>
+            <p class="d-inline aadhar_number" style="text-align: center;font-family: Montserrat, sans-serif;"><strong><?php echo $_SESSION["aan"]; ?></strong></p>
         </div>
     </div>
     <div class="footer-clean" style="border-top: 1px solid grey;">

@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); if (!$_SESSION["uid"]) {
+    header('Location: login.php');
+} ?>
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +31,7 @@
                             <li
                                 class="nav-item d-inline float-right" role="presentation" style="margin: 10px;"><a class="nav-link" href="doctor_profile.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;">{Doctor's Name}</button></a></li>
                                 <li class="nav-item details"
-                                    role="presentation" style="margin: 10px;"><a class="nav-link" href="#"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">SignOut</button></a></li>
+                                    role="presentation" style="margin: 10px;"><a class="nav-link" href="login.php"><button class="btn btn-light" type="submit" style="color: grey;border-radius: 0;border-color: grey;font-family: Montserrat, sans-serif;text-decoration: none;">SignOut</button></a></li>
                     </ul>
                 </div>
         </div>
@@ -37,7 +39,7 @@
     <div class="container" style="padding-top: 50px;padding-bottom: 50px;margin-bottom: 20px;">
         <h2 style="font-family: Montserrat, sans-serif;padding-bottom: 20px;"><strong>Add/Edit Details</strong></h2>
         <p style="font-family: Montserrat, sans-serif;"><em>If you don't have any thing to specifiy please write NA.</em></p>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <div class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Name</strong></label><input class="form-control d-inline" type="text" name="nme" required="" placeholder="John Doe" style="font-family: Montserrat, sans-serif;"></div>
             <div class="form-group"
                 ><label style="font-family: Montserrat, sans-serif;"><strong>Age</strong></label><input class="form-control" type="number" min="0" max="150" style="font-family: Montserrat, sans-serif;" placeholder="20" required="" name="age"></div>
@@ -58,9 +60,9 @@
         class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Allergy</strong></label><input class="form-control" type="text" required="" placeholder="If you have any allergy, elaborate..." style="font-family: Montserrat, sans-serif;" name="allergy"></div>
         <div
             class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Diseases</strong></label><input class="form-control" type="text" required="" placeholder="If you have any diseases, elaborate..." style="font-family: Montserrat, sans-serif;" name="diseases"></div>
-            <div
+            <!-- <div
                 class="form-group" ><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Medical Report</strong></label><input type="file" name="medical_report" style="font-family: Montserrat, sans-serif;"></div>
-                <div class="form-group" ><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Extra Documents</strong></label><input type="file" class="other_docs" style="font-family: Montserrat, sans-serif;"></div>
+                <div class="form-group" ><label class="d-block" style="font-family: Montserrat, sans-serif;"><strong>Extra Documents</strong></label><input type="file" class="other_docs" style="font-family: Montserrat, sans-serif;"></div> -->
                 <div class="form-group" ><label style="font-family: Montserrat, sans-serif;"><strong>Other Details</strong></label><input class="form-control" name="other_det" type="text" required="" placeholder="If you want to provide any extra infromation..." style="font-family: Montserrat, sans-serif;"></div>
                 <button
                     class="btn btn-outline-dark btn-block" type="submit" style="font-family: Montserrat, sans-serif;margin-top: 20px;">Add/Edit</button>
